@@ -3,14 +3,21 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-    <nav class="flex justify-center gap-4 my-6">
-      <a class="btn btn-primary" href="species_iframe/Adelie" target="penguinFrame">Adelie</a>
-      <a class="btn btn-secondary" href="species_iframe/Gentoo" target="penguinFrame">Gentoo</a>
-      <a class="btn btn-accent" href="species_iframe/Chinstrap" target="penguinFrame">Chinstrap</a>
-    </nav>
+
+    <div class="flex justify-center my-6">
+      <select
+      class="select select-bordered"
+      onchange="document.querySelector('iframe[name=penguinFrame]').src=this.value"
+      >
+      <option disabled selected>Choisir une race</option>
+      <option value="/species_iframe/Adelie/">Adelie</option>
+      <option value="/species_iframe/Gentoo/">Gentoo</option>
+      <option value="/species_iframe/Chinstrap/">Chinstrap</option>
+      </select>
+    </div>
 
     <iframe
-      src="species_iframe/Adelie"
+      src="/species_iframe/Adelie/"
       name="penguinFrame"
       style="width:100%; min-height:600px;"
       onload="resizeIframe(this)">
