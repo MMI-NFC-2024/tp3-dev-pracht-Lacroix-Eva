@@ -3,30 +3,34 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+  <h1 class="text-2xl font-bold text-center !mb-6 mt-4 text-pink-700">
+    Les Espèces de Manchots avec iframe
+  </h1>
 
-    <div class="flex justify-center my-6">
-      <select
+  <div class="flex justify-center my-6">
+    <select
       class="select select-bordered"
       onchange="document.querySelector('iframe[name=penguinFrame]').src=this.value"
-      >
+    >
       <option disabled selected>Choisir une race</option>
       <option value="/species_iframe/Adelie/">Adelie</option>
       <option value="/species_iframe/Gentoo/">Gentoo</option>
       <option value="/species_iframe/Chinstrap/">Chinstrap</option>
-      </select>
-    </div>
+    </select>
+  </div>
 
-    <iframe
-      src="/species_iframe/Adelie/"
-      name="penguinFrame"
-      style="width:100%; min-height:600px;"
-      onload="resizeIframe(this)">
-</iframe>
+  <iframe
+    src="/species_iframe/Adelie/"
+    name="penguinFrame"
+    style="width:100%; min-height:600px;"
+    onload="resizeIframe(this)"
+  >
+  </iframe>
 
-    <script>
-      function resizeIframe(iframe) {
-        iframe.style.height =
-          iframe.contentWindow.document.body.scrollHeight + "px";
-      }
-    </script>
+  <script>
+    function resizeIframe(iframe) {
+      iframe.style.height =
+        iframe.contentWindow.document.body.scrollHeight + "px";
+    }
+  </script>
 </Layout>

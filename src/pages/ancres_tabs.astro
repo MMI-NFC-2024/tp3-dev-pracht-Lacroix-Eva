@@ -10,18 +10,18 @@ import {
 ---
 
 <Layout>
-  <h1 class="text-3xl font-bold text-center !mb-6">Les Espèces de Manchots avec tabs</h1>
-  
+  <h1 class="text-2xl font-bold text-center !mb-6 mt-4 text-pink-700">
+    Les Espèces de Manchots avec tabs
+  </h1>
   <div class="w-full p-5 max-w-5xl mx-auto flex flex-col items-center">
-    <Tabs>
-      <!-- Liste des onglets -->
-      <TabsList class="flex justify-center gap-2 pb-4">
+    <Tabs class="w-full flex flex-col items-center">
+      <TabsList class="flex justify-center gap-2 pb-4 w-full">
         <TabsTab
           id="tab1"
           controls="panel1"
           selected
           class={`!px-4 !py-2 !rounded-xl !cursor-pointer !bg-gray-200 !text-gray-800 !font-semibold
-                  [&[aria-selected="true"]]:!bg-blue-600 [&[aria-selected="true"]]:!text-white`}
+                  [&[aria-selected="true"]]:!bg-blue-800 [&[aria-selected="true"]]:!text-white`}
         >
           Adelie
         </TabsTab>
@@ -30,7 +30,7 @@ import {
           id="tab2"
           controls="panel2"
           class={`!px-4 !py-2 !rounded-xl !cursor-pointer !bg-gray-200 !text-gray-800 !font-semibold
-                  [&[aria-selected="true"]]:!bg-blue-600 [&[aria-selected="true"]]:!text-white`}
+                  [&[aria-selected="true"]]:!bg-fuchsia-800 [&[aria-selected="true"]]:!text-white`}
         >
           Chinstrap
         </TabsTab>
@@ -39,14 +39,19 @@ import {
           id="tab3"
           controls="panel3"
           class={`!px-4 !py-2 !rounded-xl !cursor-pointer !bg-gray-200 !text-gray-800 !font-semibold
-                  [&[aria-selected="true"]]:!bg-blue-600 [&[aria-selected="true"]]:!text-white`}
+                  [&[aria-selected="true"]]:!bg-rose-800 [&[aria-selected="true"]]:!text-white`}
         >
           Gentoo
         </TabsTab>
       </TabsList>
 
       <!-- Contenu des panneaux -->
-      <TabsPanel id="panel1" labelledby="tab1" selected class="!p-4 flex justify-center">
+      <TabsPanel
+        id="panel1"
+        labelledby="tab1"
+        selected
+        class="!p-4 flex justify-center"
+      >
         <GraphicSpecies_iframe species="Adelie" />
       </TabsPanel>
       <TabsPanel id="panel2" labelledby="tab2" class="!p-4 flex justify-center">
