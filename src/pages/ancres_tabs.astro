@@ -1,0 +1,60 @@
+---
+import GraphicSpecies_iframe from "../components/GraphicSpecies_iframe.astro";
+import Layout from "../layouts/Layout.astro";
+import {
+  Tabs,
+  TabsList,
+  TabsTab,
+  TabsPanel,
+} from "accessible-astro-components";
+---
+
+<Layout>
+  <h1 class="text-3xl font-bold text-center !mb-6">Les Espèces de Manchots avec tabs</h1>
+  
+  <div class="w-full p-5 max-w-5xl mx-auto flex flex-col items-center">
+    <Tabs>
+      <!-- Liste des onglets -->
+      <TabsList class="flex justify-center gap-2 pb-4">
+        <TabsTab
+          id="tab1"
+          controls="panel1"
+          selected
+          class={`!px-4 !py-2 !rounded-xl !cursor-pointer !bg-gray-200 !text-gray-800 !font-semibold
+                  [&[aria-selected="true"]]:!bg-blue-600 [&[aria-selected="true"]]:!text-white`}
+        >
+          Adelie
+        </TabsTab>
+
+        <TabsTab
+          id="tab2"
+          controls="panel2"
+          class={`!px-4 !py-2 !rounded-xl !cursor-pointer !bg-gray-200 !text-gray-800 !font-semibold
+                  [&[aria-selected="true"]]:!bg-blue-600 [&[aria-selected="true"]]:!text-white`}
+        >
+          Chinstrap
+        </TabsTab>
+
+        <TabsTab
+          id="tab3"
+          controls="panel3"
+          class={`!px-4 !py-2 !rounded-xl !cursor-pointer !bg-gray-200 !text-gray-800 !font-semibold
+                  [&[aria-selected="true"]]:!bg-blue-600 [&[aria-selected="true"]]:!text-white`}
+        >
+          Gentoo
+        </TabsTab>
+      </TabsList>
+
+      <!-- Contenu des panneaux -->
+      <TabsPanel id="panel1" labelledby="tab1" selected class="!p-4 flex justify-center">
+        <GraphicSpecies_iframe species="Adelie" />
+      </TabsPanel>
+      <TabsPanel id="panel2" labelledby="tab2" class="!p-4 flex justify-center">
+        <GraphicSpecies_iframe species="Chinstrap" />
+      </TabsPanel>
+      <TabsPanel id="panel3" labelledby="tab3" class="!p-4 flex justify-center">
+        <GraphicSpecies_iframe species="Gentoo" />
+      </TabsPanel>
+    </Tabs>
+  </div>
+</Layout>
