@@ -1,0 +1,41 @@
+---
+import GraphicSpecies_iframe from "../components/GraphicSpecies_iframe.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="carousel w-full p-5">
+    <div id="slide1" class="carousel-item relative w-full">
+      <GraphicSpecies_iframe species="Adelie" />
+      <div
+        class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+      >
+        <a href="#slide3" class="btn btn-circle">❮</a>
+        <a href="#slide2" class="btn btn-circle">❯</a>
+      </div>
+    </div>
+    <div id="slide2" class="carousel-item relative w-full">
+      <GraphicSpecies_iframe species="Chinstrap" />
+      <div
+        class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+      >
+        <a href="#slide1" class="btn btn-circle">❮</a>
+        <a href="#slide3" class="btn btn-circle">❯</a>
+      </div>
+    </div>
+    <div id="slide3" class="carousel-item relative w-full">
+      <GraphicSpecies_iframe species="Gentoo" />
+      <div
+        class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+      >
+        <a href="#slide2" class="btn btn-circle">❮</a>
+        <a href="#slide1" class="btn btn-circle">❯</a>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center w-full pt-2 pb-4 gap-2">
+    <a href="#slide1" class="btn btn-lg btn-primary">Adelie</a>
+    <a href="#slide2" class="btn btn-lg btn-secondary">Chinstrap</a>
+    <a href="#slide3" class="btn btn-lg btn-accent">Gentoo</a>
+  </div>
+</Layout>
